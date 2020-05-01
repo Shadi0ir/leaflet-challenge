@@ -1,3 +1,4 @@
+//const API_KEY="pk.eyJ1Ijoic2hhZGkwaXIiLCJhIjoiY2s4MXY3NW40MHVrbTNtcnkxdjl1aWhrcSJ9.cHcNw2uazJ5pDfJtpot0UA"
 // Set up variables for our tile layers
 const Grayscale = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
@@ -93,10 +94,10 @@ d3.json(geoData, function(data) {
         let div = L.DomUtil.create('div', 'info legend');
         let range = [0, 1, 2, 3, 4, 5];
         let colors = ["#ADFF2F", "#F0E68C", "#FFD700", "#FFA500", "#FF8C00", "#FF4500"];
-        for (var i = 0; i < grades.length; i++) {
+        for (var i = 0; i < range.length; i++) {
             div.innerHTML +=
               "<i style='background: " + colors[i] + "'></i> " +
-              grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
+              range[i] + (range[i + 1] ? "&ndash;" + range[i + 1] + "<br>" : "+");
           }
           return div;
       
