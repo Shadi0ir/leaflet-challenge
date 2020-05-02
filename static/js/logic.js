@@ -89,15 +89,15 @@ d3.json(geoData, function(data) {
         }
         return magnitude * 3;
     }
-    var legend = L.control({ position: "bottomright" });
+    let legend = L.control({ position: "bottomright" });
     legend.onAdd = function () {
         let div = L.DomUtil.create('div', 'info legend');
-        let range = [0, 1, 2, 3, 4, 5];
+        let earthquakeMag = [ 0, 1, 2, 3, 4, 5];
         let colors = ["#ADFF2F", "#F0E68C", "#FFD700", "#FFA500", "#FF8C00", "#FF4500"];
-        for (var i = 0; i < range.length; i++) {
+        for (let j = 0; i < earthquakeMag.length; j++) {
             div.innerHTML +=
-              "<i style='background: " + colors[i] + "'></i> " +
-              range[i] + (range[i + 1] ? "&ndash;" + range[i + 1] + "<br>" : "+");
+              "<i style='background: " + colors[i-1] + "'></i> " +
+              earthquakeMag[i] + (earthquakeMag[i + 1] ? "&ndash;" + earthquakeMag[i + 1] + "<br>" : "+");
           }
           return div;
       
